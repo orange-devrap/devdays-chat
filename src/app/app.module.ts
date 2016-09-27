@@ -6,10 +6,11 @@ import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 
 import { AppComponent } from './app.component';
 const firebaseConfig = {
-    apiKey: "AIzaSyAMoV03Twhvq3cY-YPP3lu6a3CvAKaxe7E",
-    authDomain: "devdays-b57e5.firebaseapp.com",
-    databaseURL: "https://devdays-b57e5.firebaseio.com",
-    storageBucket: "devdays-b57e5.appspot.com"
+    apiKey: 'AIzaSyAMoV03Twhvq3cY-YPP3lu6a3CvAKaxe7E',
+    authDomain: 'devdays-b57e5.firebaseapp.com',
+    databaseURL: 'https://devdays-b57e5.firebaseio.com',
+    storageBucket: 'devdays-b57e5.appspot.com',
+    messagingSenderId: '805009878762'
   };
 
 const myFirebaseAuthConfig = {

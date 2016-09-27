@@ -55765,10 +55765,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var firebaseConfig = {
-    apiKey: "AIzaSyAMoV03Twhvq3cY-YPP3lu6a3CvAKaxe7E",
-    authDomain: "devdays-b57e5.firebaseapp.com",
-    databaseURL: "https://devdays-b57e5.firebaseio.com",
-    storageBucket: "devdays-b57e5.appspot.com"
+    apiKey: 'AIzaSyAMoV03Twhvq3cY-YPP3lu6a3CvAKaxe7E',
+    authDomain: 'devdays-b57e5.firebaseapp.com',
+    databaseURL: 'https://devdays-b57e5.firebaseio.com',
+    storageBucket: 'devdays-b57e5.appspot.com',
+    messagingSenderId: '805009878762'
 };
 var myFirebaseAuthConfig = {
     provider: __WEBPACK_IMPORTED_MODULE_4_angularfire2__["b" /* AuthProviders */].Anonymous,

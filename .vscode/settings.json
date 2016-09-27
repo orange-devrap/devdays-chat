@@ -1,0 +1,7 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "typescript.tsdk": "node_modules/typescript/lib",
+
+    // Adds spaces between the beginning and ending of the brackets in an import line.
+    "genGetSet.spacedImportLine": true
+}

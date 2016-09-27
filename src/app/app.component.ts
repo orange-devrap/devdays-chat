@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFire, FirebaseListObservable, AuthProviders, AuthMethods } from 'angularfire2';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +12,16 @@ export class AppComponent {
   items: FirebaseListObservable<any[]>;
 
   constructor(af: AngularFire) {
-    this.items = af.database.list('rooms');
-  }
+    af.auth.login({
+      provider: AuthProviders.Anonymous,
+      method: AuthMethods.Anonymous,
+    })
+    .then(auth => {
+      console.log('auth', auth);
+      this.items = af.database.list('rooms');
+    })
+    .catch(ex => console.error('ex', ex));
+
+   }
 
 }

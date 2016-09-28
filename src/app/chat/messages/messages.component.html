@@ -1,3 +1,7 @@
-<p>
-  messages works!
-</p>
+<section class="message-list-container">
+  <ddo-message *ngFor="let m of (messages | async); trackBy: trackByKey" [message]="m"></ddo-message>
+
+  <div *ngIf="(messages | async)?.length < 1">
+    No messages
+  </div>
+</section>

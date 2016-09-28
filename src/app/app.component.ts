@@ -7,9 +7,8 @@ import { AngularFire, FirebaseListObservable, AuthProviders, AuthMethods } from 
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
 
-  items: FirebaseListObservable<any[]>;
+  rooms: FirebaseListObservable<any[]>;
 
   constructor(af: AngularFire) {
     af.auth.login({
@@ -18,7 +17,7 @@ export class AppComponent {
     })
     .then(auth => {
       console.log('auth', auth);
-      this.items = af.database.list('rooms');
+      this.rooms = af.database.list('rooms');
     })
     .catch(ex => console.error('ex', ex));
 

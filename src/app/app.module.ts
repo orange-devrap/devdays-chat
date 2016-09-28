@@ -5,8 +5,11 @@ import { FormsModule } from '@angular/forms';
 
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
 import { AppComponent } from './app.component';
+import { RoomsComponent } from './room/rooms/rooms.component';
+import { MessagesComponent } from './chat/messages/messages.component';
+import { MessageComponent } from './chat/message/message.component';
 
 const firebaseConfig = {
     apiKey: 'AIzaSyAMoV03Twhvq3cY-YPP3lu6a3CvAKaxe7E',
@@ -14,7 +17,7 @@ const firebaseConfig = {
     databaseURL: 'https://devdays-b57e5.firebaseio.com',
     storageBucket: 'devdays-b57e5.appspot.com'
   };
-    // messagingSenderId: '805009878762'
+
 const myFirebaseAuthConfig = {
   provider: AuthProviders.Anonymous,
   method: AuthMethods.Anonymous
@@ -22,7 +25,7 @@ const myFirebaseAuthConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent, NavbarComponent
+    AppComponent, NavbarComponent, RoomsComponent, MessagesComponent, MessageComponent
   ],
   imports: [
     BrowserModule,

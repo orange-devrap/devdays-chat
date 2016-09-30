@@ -1,5 +1,7 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
+import { AuthService } from '../services/auth.service';
 import { User } from '../models';
 
 @Component({
@@ -13,13 +15,22 @@ export class NavbarComponent {
   @Output() sidenavToggle: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output() themeToggle: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  constructor(public userService: UserService) {
+  constructor(public userService: UserService, public authService: AuthService, public router: Router) {
     userService.currentUser$.subscribe(currentUser => this.user = currentUser);
   }
 
   theme($event) {
     console.log($event);
     this.themeToggle.emit(true);
+  }
+
+  goToRooms() {
+    this.router.navigate(['/rooms']);
+  }
+
+  logout() {
+     this.authService.logout();
+     this.router.navigate(['/login']);
   }
 
 }

@@ -1,7 +1,35 @@
-.fill-remaining {
+/*.fill-remaining {
   flex: 1 1 auto;
 }
 
 a.md-primary[md-button] {
   color: #fff;
+}*/
+
+
+.app-icon-button {
+  box-shadow: none;
+  user-select: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  filter: none;
+  font-weight: normal;
+  height: auto;
+  line-height: inherit;
+  margin: 0;
+  min-width: 0;
+  padding: 0;
+  text-align: left;
+  text-decoration: none;
+  color: white;
+}
+
+
+.app-toolbar-filler {
+  flex: 1 1 auto;
+}
+
+.app-toolbar-title {
+  padding-left: 10px;
 }

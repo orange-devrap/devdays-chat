@@ -3,4 +3,8 @@
 @import '~boosted/dist/css/boosted2015.css';
 @import '~boosted/dist/css/orangeIcons.css';*/
 
-@import '~font-awesome/css/font-awesome.css';
+/*@import '~font-awesome/css/font-awesome.css';*/
+
+body {
+  margin: 0;
+}

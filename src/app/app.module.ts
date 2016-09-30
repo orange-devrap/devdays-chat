@@ -1,19 +1,23 @@
-import { ChatMessagesService } from './shared/services/chat-messages.service';
+import { ChatMessagesService, UserService, AuthService } from './shared/services';
 import { ChatComponent } from './chat/chat.component';
-import { RouterModule } from '@angular/router/src';
 import { MaterialModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
+import { routing, appRoutingProviders } from './app.routes';
+
+import { AngularFireModule } from 'angularfire2';
+// import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { AppComponent } from './app.component';
 import { RoomsComponent } from './room/rooms.component';
 import { MessagesComponent } from './chat/messages/messages.component';
 import { MessageComponent, MessageFormComponent } from './chat/message';
+import { LoginComponent } from './login/login.component';
 
 const firebaseConfig = {
     apiKey: 'AIzaSyAMoV03Twhvq3cY-YPP3lu6a3CvAKaxe7E',
@@ -22,37 +26,28 @@ const firebaseConfig = {
     storageBucket: 'devdays-b57e5.appspot.com'
   };
 
-const myFirebaseAuthConfig = {
-  provider: AuthProviders.Anonymous,
-  method: AuthMethods.Anonymous
-};
+// const myFirebaseAuthConfig = {
+//   provider: AuthProviders.Anonymous,
+//   method: AuthMethods.Anonymous
+// };
 
 @NgModule({
   declarations: [
-    AppComponent, NavbarComponent, RoomsComponent, MessagesComponent, MessageComponent, ChatComponent, MessageFormComponent
+    AppComponent,
+    NavbarComponent, RoomsComponent, MessagesComponent, MessageComponent,
+    ChatComponent, MessageFormComponent, LoginComponent
   ],
   imports: [
     BrowserModule,
     CommonModule,
-    MaterialModule,
+    routing,
+    FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([
-      {
-        path: '',
-        component: RoomsComponent
-      },
-      {
-        path: 'rooms',
-        component: RoomsComponent
-      },
-      {
-        path: 'rooms/:roomId/chat',
-        component: ChatComponent
-      }
-    ]),
-    AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig)
+    MaterialModule.forRoot(),
+    AngularFireModule.initializeApp(firebaseConfig)
+    // AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig)
   ],
-  providers: [ ChatMessagesService ],
+  providers: [ appRoutingProviders, ChatMessagesService, UserService, AuthService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

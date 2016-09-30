@@ -5,3 +5,11 @@
 .room-container md-card {
   margin: 16px;
 }
+
+.room-container md-card-actions {
+  padding-left: 8px;
+}
+
+.app-spinner {
+  margin:auto;
+}

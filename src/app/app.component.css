@@ -32,11 +32,6 @@ md-sidenav-layout.m2app-dark {
   right: 20px;
 }
 
-.app-spinner {
-  height: 30px;
-  width: 30px;
-  display: inline-block;
-}
 
 .app-input-icon {
   font-size: 16px;

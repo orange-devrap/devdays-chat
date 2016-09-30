@@ -14,7 +14,7 @@ export class AppComponent {
 
   rooms: FirebaseListObservable<any[]>;
 
-  constructor(af: AngularFire, public authService: AuthService,public router: Router) {
+  constructor(af: AngularFire, public authService: AuthService, public router: Router) {
     af.auth.login({
       provider: AuthProviders.Anonymous,
       method: AuthMethods.Anonymous,

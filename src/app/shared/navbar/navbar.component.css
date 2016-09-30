@@ -6,6 +6,11 @@ a.md-primary[md-button] {
   color: #fff;
 }*/
 
+.app-toolbar {
+  position: fixed;
+  z-index: 100;
+  top:0;
+}
 
 .app-icon-button {
   box-shadow: none;

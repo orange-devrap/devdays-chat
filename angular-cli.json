@@ -15,7 +15,8 @@
       "prefix": "ddo",
       "mobile": false,
       "styles": [
-        "styles.css"
+        "styles.css",
+        "app-md-theme.scss"
       ],
       "scripts": [],
       "environments": {

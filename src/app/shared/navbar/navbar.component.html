@@ -1,10 +1,16 @@
 <md-toolbar color="primary">
 
-  <span>DevDays 2016 Chat</span>
+  <button class="app-icon-button" (click)="sidenavToggle.emit()">
+    <i class="material-icons app-toolbar-menu">menu</i>
+  </button>
 
-  <!-- This fills the remaining space of the current row -->
-  <span class="fill-remaining"></span>
+  <span class="app-toolbar-title">DevDays 2016</span>
 
-  <a [routerLink]="['/rooms']" md-raised-button color="accent">Rooms</a>
+  <!--<span class="fill-remaining"></span>-->
+  <span class="app-toolbar-filler"></span>
+  
+  <span class="app-toolbar-user" title="{{ user?.firstname }} {{ user?.lastname }}" >{{ user?.login }}</span> 
+
+  <button md-button (click)="theme($event)">THEME</button>
 
 </md-toolbar>

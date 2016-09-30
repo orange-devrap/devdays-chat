@@ -1,0 +1,20 @@
+<md-card class="app-input-section">
+  <md-card-content>
+    <form (ngSubmit)="loginUser()">
+      <md-list>
+        <md-list-item>
+          <md-input placeholder="login" [(ngModel)]="user.login" name="login" required></md-input>
+        </md-list-item>
+        <md-list-item>
+          <md-input placeholder="firstname" [(ngModel)]="user.firstname" name="firstname"></md-input>
+        </md-list-item>
+        <md-list-item>
+          <md-input placeholder="lastname" [(ngModel)]="user.lastname" name="lastname"></md-input>
+        </md-list-item>
+      </md-list>
+      <br>
+      <button md-raised-button color="primary" type="submit">connect</button>
+      <button md-raised-button (click)="reset()">reset</button>
+    </form>
+  </md-card-content>
+</md-card>

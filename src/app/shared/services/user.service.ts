@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/user';
-import { Subject }    from 'rxjs/Subject';
+import { BehaviorSubject }    from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class UserService {
 
-  private currentUser = new Subject<User>();
+  private currentUser = new BehaviorSubject<User>(new User('', '', '', ''));
 
   currentUser$ = this.currentUser.asObservable();
 

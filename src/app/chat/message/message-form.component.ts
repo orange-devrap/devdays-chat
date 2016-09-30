@@ -1,9 +1,9 @@
-import { Component, Input } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
 import { ChatMessagesService } from '../../shared/services';
 import { ChatMessage } from '../../shared/models';
+import { UserService } from '../../shared/services/user.service';
 
-class ChatMessageFormModel {
+class ChatMessageFormModel implements ChatMessage {
   author: string;
   body: string;
 }
@@ -13,25 +13,28 @@ class ChatMessageFormModel {
   templateUrl: 'message-form.component.html',
   styleUrls: ['message-form.component.css']
 })
-export class MessageFormComponent {
+export class MessageFormComponent implements OnInit {
   @Input() roomId: string;
-  private chatMessageForm: FormGroup;
+  @Input() author: string;
 
-  constructor(private _fb: FormBuilder, private _cs: ChatMessagesService) { 
-    this.chatMessageForm = this._fb.group({
-      'author': ['', Validators.required],
-      'body': ['', Validators.required]
-    });
+  private chatModel: ChatMessage = new ChatMessageFormModel();
+
+  constructor(public chatMessageService: ChatMessagesService, public userService: UserService) {
   }
 
+  ngOnInit() {
+    this.chatModel.author = this.author;
+  }
 
   saveMessage() {
-    if (this.chatMessageForm.valid) {
-      this._cs.createNewMessage(this.roomId, <ChatMessage> this.chatMessageForm.value);
-      const author = this.chatMessageForm.controls['author'].value;
-      this.chatMessageForm.reset();
-      this.chatMessageForm.controls['author'].setValue(author);
-    }
+    // TODO validation
+    this.chatMessageService.createNewMessage(this.roomId, <ChatMessage> this.chatModel);
+    this.chatModel.body = '';
+    // if (this.chatMessageForm.valid) {
+    //   const author = this.chatMessageForm.controls['author'].value;
+    //   this.chatMessageForm.reset();
+    //   this.chatMessageForm.controls['author'].setValue(author);
+    // }
   }
 
 }

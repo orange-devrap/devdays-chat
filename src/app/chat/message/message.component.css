@@ -1,3 +1,16 @@
 md-card {
   margin-bottom: 15px;
 }
+
+md-card-title {
+  font-size:20px;
+}
+
+md-card-content {
+  font-size:15px;
+}
+
+.message-date {
+  float:right;
+  font-size: medium;
+}

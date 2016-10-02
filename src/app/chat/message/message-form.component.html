@@ -2,7 +2,7 @@
   <md-card-content>
     <form (ngSubmit)="saveMessage()" >
       <p><textarea [(ngModel)]="chatModel.body" name="body"></textarea></p>
-      <div style="width:100%;text-align:right">
+      <div>
         <button md-raised-button color="primary" type="submit" >Send</button>
       </div>
     </form>

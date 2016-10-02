@@ -6,3 +6,8 @@ textarea {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   font-size: 18px;
 }
+
+div {
+  width:100%;
+  text-align:right;
+}

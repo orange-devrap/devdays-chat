@@ -3,14 +3,14 @@
     <form (ngSubmit)="loginUser()">
       <md-list>
         <md-list-item>
-          <md-input placeholder="login" [(ngModel)]="user.login" name="login" required></md-input>
+          <md-input placeholder="choose your pseudo" [(ngModel)]="user.login" name="login" required></md-input>
         </md-list-item>
-        <md-list-item>
+        <!--<md-list-item>
           <md-input placeholder="firstname" [(ngModel)]="user.firstname" name="firstname"></md-input>
         </md-list-item>
         <md-list-item>
           <md-input placeholder="lastname" [(ngModel)]="user.lastname" name="lastname"></md-input>
-        </md-list-item>
+        </md-list-item>-->
       </md-list>
       <br>
       <button md-raised-button color="primary" type="submit">connect</button>

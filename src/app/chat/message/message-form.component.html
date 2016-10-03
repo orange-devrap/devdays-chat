@@ -1,9 +1,9 @@
 <md-card>
   <md-card-content>
-    <form (ngSubmit)="saveMessage()" >
-      <p><textarea [(ngModel)]="chatModel.body" name="body"></textarea></p>
+    <form (ngSubmit)="saveMessage()"  #messageForm="ngForm">
+      <p><textarea [(ngModel)]="chatModel.body" name="body" required></textarea></p>
       <div>
-        <button md-raised-button color="primary" type="submit" >Send</button>
+        <button md-raised-button color="primary" type="submit" [disabled]="!messageForm.form.valid">Send</button>
       </div>
     </form>
   </md-card-content>

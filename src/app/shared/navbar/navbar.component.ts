@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { RoomService } from '../services/room.service';
@@ -20,6 +21,7 @@ export class NavbarComponent {
   constructor(public userService: UserService, 
             public authService: AuthService, 
             public roomService: RoomService, 
+            private _location: Location,
             public router: Router) {
     userService.currentUser$.subscribe(currentUser => this.user = currentUser);
     roomService.currentRoom$.subscribe(currentRoom => this.room = currentRoom);
@@ -36,6 +38,10 @@ export class NavbarComponent {
   logout() {
      this.authService.logout();
      this.router.navigate(['/login']);
+  }
+
+  goBack() {
+    this._location.back();
   }
 
 }

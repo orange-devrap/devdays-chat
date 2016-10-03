@@ -40,6 +40,10 @@ a.md-primary[md-button] {
 }
 
 .app-toolbar-room {
-  padding-right: 10px;
+  padding-right: 40px;
   color: #ffd200;
+}
+
+.app-icon-user {
+  padding-right: 5px;
 }

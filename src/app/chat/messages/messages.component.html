@@ -1,11 +1,11 @@
 <section class="message-list-container">
 
-  <div *ngFor="let msg of (messages | async); trackBy: trackByKey;let isLast = last">
+  <div *ngFor="let msg of (messages | async); trackBy: trackByKey;">
     <ddo-message  [message]="msg"></ddo-message>
   </div>
 
   <div *ngIf="(messages | async)?.length < 1">
-    no messages
+    <md-spinner class="app-spinner"></md-spinner>
   </div>
   
 </section>

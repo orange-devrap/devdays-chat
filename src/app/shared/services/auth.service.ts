@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFire, AuthProviders, AuthMethods, FirebaseAuthState } from 'angularfire2';
 import { UserService } from './user.service';
+import { RoomService } from './room.service';
 
 @Injectable()
 export class AuthService {
@@ -10,7 +11,7 @@ export class AuthService {
   // store the URL so we can redirect after logging in
   redirectUrl: string;
 
-  constructor(public af: AngularFire, public userService: UserService) {
+  constructor(public af: AngularFire, public userService: UserService, public roomService: RoomService) {
 
   }
 
@@ -24,6 +25,7 @@ export class AuthService {
   logout(): void {
     // this.af.auth.logout();
     this.userService.reset();
+    this.roomService.reset();
     this.isLoggedIn = false;
   }
 }

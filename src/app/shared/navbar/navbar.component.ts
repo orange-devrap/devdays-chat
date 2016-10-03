@@ -1,8 +1,9 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
+import { RoomService } from '../services/room.service';
 import { AuthService } from '../services/auth.service';
-import { User } from '../models';
+import { User, Room } from '../models';
 
 @Component({
   selector: 'ddo-navbar',
@@ -12,11 +13,16 @@ import { User } from '../models';
 export class NavbarComponent {
 
   user: User;
+  room: Room;
   @Output() sidenavToggle: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output() themeToggle: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  constructor(public userService: UserService, public authService: AuthService, public router: Router) {
+  constructor(public userService: UserService, 
+            public authService: AuthService, 
+            public roomService: RoomService, 
+            public router: Router) {
     userService.currentUser$.subscribe(currentUser => this.user = currentUser);
+    roomService.currentRoom$.subscribe(currentRoom => this.room = currentRoom);
   }
 
   theme($event) {

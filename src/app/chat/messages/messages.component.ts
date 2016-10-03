@@ -18,7 +18,6 @@ export class MessagesComponent implements OnInit {
   constructor(private chatMessageService: ChatMessagesService) { }
 
   ngOnInit() {
-    console.log('onInit : document.body.scrollHeight', document.body.scrollHeight);
     this.messages = this.chatMessageService.getMessagesByRoomId(this.roomId);
   }
 
@@ -28,7 +27,9 @@ export class MessagesComponent implements OnInit {
 
   scrollToBottom(): void {
     if (this.isTop) {
-      window.scrollTo(0, document.body.scrollHeight);
+      setTimeout(() => {
+        window.scrollTo(0, document.body.scrollHeight);
+      }, 0);
       this.isTop = false;
     }
   }

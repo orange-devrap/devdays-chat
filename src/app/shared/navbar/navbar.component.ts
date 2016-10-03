@@ -20,7 +20,6 @@ export class NavbarComponent {
   }
 
   theme($event) {
-    console.log($event);
     this.themeToggle.emit(true);
   }
 

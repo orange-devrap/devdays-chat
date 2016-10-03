@@ -20,7 +20,7 @@ export class LoginComponent {
     this.authService.login()
       .then(auth => {
 
-        console.log('loginUser auth', auth);
+        // console.log('loginUser auth', auth);
 
         // store current user
         let userAuthenticated = new User(auth.uid, this.user.login, this.user.firstname, this.user.lastname);

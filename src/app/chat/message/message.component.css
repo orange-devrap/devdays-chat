@@ -2,6 +2,14 @@ md-card {
   margin-bottom: 15px;
 }
 
+md-card.my-message {
+  background-color: #4BB4E6;
+}
+
+md-card.my-message .message-author {
+  color:white;
+}
+
 md-card-title {
   font-size:20px;
 }
@@ -13,4 +21,8 @@ md-card-content {
 .message-date {
   float:right;
   font-size: medium;
+}
+
+.message-author {
+  color: #4BB4E6;
 }

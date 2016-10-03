@@ -27,14 +27,8 @@ export class MessageFormComponent implements OnInit {
   }
 
   saveMessage() {
-    // TODO validation
     this.chatMessageService.createNewMessage(this.roomId, <ChatMessage> this.chatModel);
     this.chatModel.body = '';
-    // if (this.chatMessageForm.valid) {
-    //   const author = this.chatMessageForm.controls['author'].value;
-    //   this.chatMessageForm.reset();
-    //   this.chatMessageForm.controls['author'].setValue(author);
-    // }
   }
 
 }

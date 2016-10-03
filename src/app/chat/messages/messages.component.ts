@@ -11,7 +11,6 @@ import { ChatMessagesService } from '../../shared/services/chat-messages.service
 export class MessagesComponent implements OnInit {
 
   @Input() roomId: string;
-  private isTop: boolean = true;
 
   messages: Observable<ChatMessage[]>;
 
@@ -19,19 +18,18 @@ export class MessagesComponent implements OnInit {
 
   ngOnInit() {
     this.messages = this.chatMessageService.getMessagesByRoomId(this.roomId);
+    this.messages.subscribe(msg => {
+      // console.log('refresh messages', '(document.body.scrollHeight - window.scrollY)', (document.body.scrollHeight - window.scrollY));
+      if (window.scrollY === 0 || (document.body.scrollHeight - window.scrollY) < 900) {
+        setTimeout(() => {
+          window.scrollTo(0, document.body.scrollHeight);
+        }, 0);
+      }
+    });
   }
 
   trackByKey(index: number, entry: ChatMessage) {
     return entry.$key;
-  }
-
-  scrollToBottom(): void {
-    if (this.isTop) {
-      setTimeout(() => {
-        window.scrollTo(0, document.body.scrollHeight);
-      }, 0);
-      this.isTop = false;
-    }
   }
 
 }

@@ -2,7 +2,6 @@
 
   <div *ngFor="let msg of (messages | async); trackBy: trackByKey;let isLast = last">
     <ddo-message  [message]="msg"></ddo-message>
-    {{ (isLast && isTop) ? scrollToBottom() : '' }}
   </div>
 
   <div *ngIf="(messages | async)?.length < 1">

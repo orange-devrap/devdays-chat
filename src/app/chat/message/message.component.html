@@ -1,7 +1,7 @@
-<md-card>
+<md-card class="message-card" [ngClass]="{ 'my-message' : isMyMessage() }">
   <md-card-title>
     <div>
-      <span><small>{{ message.author }}</small></span>
+      <span class="message-author"><small>{{ message.author }}</small></span>
       <span class="message-date"><small>{{ message.created | date:'dd/MM/yy HH:mm' }}</small></span>
     </div>
   </md-card-title>

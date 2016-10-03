@@ -11,7 +11,7 @@ import { User } from '../shared/models';
 })
 export class LoginComponent {
 
-  user: User = new User('', '', '', '');
+  user: User = new User();
 
   constructor(public authService: AuthService, public router: Router, public userService: UserService) {
   }
@@ -19,11 +19,10 @@ export class LoginComponent {
   loginUser() {
     this.authService.login()
       .then(auth => {
-
-        // console.log('loginUser auth', auth);
-
         // store current user
-        let userAuthenticated = new User(auth.uid, this.user.login, this.user.firstname, this.user.lastname);
+        let userAuthenticated = new User();
+        userAuthenticated.uid = auth.uid;
+        userAuthenticated.pseudo = this.user.pseudo;
         this.userService.load(userAuthenticated);
         this.authService.isLoggedIn = true;
 
@@ -38,7 +37,7 @@ export class LoginComponent {
   }
 
   reset() {
-    this.user = new User('', '', '', '');
+    this.user = new User();
   }
 
   logout() {

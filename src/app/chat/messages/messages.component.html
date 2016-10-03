@@ -1,7 +1,12 @@
 <section class="message-list-container">
-  <ddo-message *ngFor="let m of (messages | async); trackBy: trackByKey" [message]="m"></ddo-message>
+
+  <div *ngFor="let msg of (messages | async); trackBy: trackByKey;let isLast = last">
+    <ddo-message  [message]="msg"></ddo-message>
+    {{ (isLast && isTop) ? scrollToBottom() : '' }}
+  </div>
 
   <div *ngIf="(messages | async)?.length < 1">
-    No messages
+    no messages
   </div>
+  
 </section>

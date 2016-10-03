@@ -20,7 +20,7 @@ export class AppComponent {
       method: AuthMethods.Anonymous,
     })
     .then(auth => {
-      console.log('auth', auth);
+      // console.log('auth', auth);
       // this.rooms = af.database.list('rooms');
     })
     .catch(ex => console.error('ex', ex));
@@ -32,7 +32,6 @@ export class AppComponent {
    }
 
    logout() {
-     console.log('logout');
      this.authService.logout();
      this.router.navigate(['/login']);
    }

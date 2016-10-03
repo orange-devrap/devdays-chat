@@ -13,7 +13,6 @@ export class ChatComponent {
 
   constructor(private _route: ActivatedRoute, public userService: UserService) {
     userService.currentUser$.subscribe(user => {
-      console.log('user chat', user);
       this.author = user.login;
     });
     this.roomId = this._route.snapshot.params['roomId'];

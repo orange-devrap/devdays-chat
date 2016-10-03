@@ -17,7 +17,7 @@ export class MessageComponent implements OnInit {
 
   ngOnInit() {
     this.userService.currentUser$.subscribe(user => {
-      this.author = user.login;
+      this.author = user.pseudo;
     });
   }
 

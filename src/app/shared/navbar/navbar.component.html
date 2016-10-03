@@ -14,8 +14,8 @@
 
   <span class="app-toolbar-room">{{room?.name}}</span>
   
-  <md-icon class="app-icon-user" *ngIf="user?.login?.length > 0" >account_circle</md-icon>
-  <span class="app-toolbar-user" title="{{ user?.firstname }} {{ user?.lastname }}">{{ user?.login }}</span>
+  <md-icon class="app-icon-user" *ngIf="user?.pseudo?.length > 0" >account_circle</md-icon>
+  <span class="app-toolbar-user">{{ user?.pseudo }}</span>
 
 </md-toolbar>
 

@@ -5,7 +5,7 @@ import { BehaviorSubject }    from 'rxjs/BehaviorSubject';
 @Injectable()
 export class UserService {
 
-  private currentUser = new BehaviorSubject<User>(new User('', '', '', ''));
+  private currentUser = new BehaviorSubject<User>(new User());
 
   currentUser$ = this.currentUser.asObservable();
 
@@ -14,7 +14,7 @@ export class UserService {
   }
 
   reset() {
-    this.currentUser.next(new User('', '', '', ''));
+    this.currentUser.next(new User());
   }
 
 }

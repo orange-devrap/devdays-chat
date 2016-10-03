@@ -38,3 +38,8 @@ a.md-primary[md-button] {
 .app-toolbar-title {
   padding-left: 10px;
 }
+
+.app-toolbar-room {
+  padding-right: 10px;
+  color: #ffd200;
+}

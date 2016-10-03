@@ -7,7 +7,7 @@
       <p>{{ room.description }}</p>
     </md-card-content>
     <md-card-actions>
-        <a [routerLink]="['/rooms', room.$key, 'chat']" md-raised-button color="primary">JOIN</a>
+        <a [routerLink]="['/rooms', room.$key, 'chat']" md-raised-button color="primary" (click)="selectRoom(room.$key)">JOIN</a>
       </md-card-actions>
   </md-card>
   <div *ngIf="(rooms | async)?.length < 1" style="padding-top:150px">

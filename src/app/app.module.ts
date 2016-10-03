@@ -1,4 +1,4 @@
-import { ChatMessagesService, UserService, AuthService } from './shared/services';
+import { ChatMessagesService, UserService, AuthService, RoomService } from './shared/services';
 import { ChatComponent } from './chat/chat.component';
 import { MaterialModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
@@ -47,7 +47,7 @@ const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig)
     // AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig)
   ],
-  providers: [ appRoutingProviders, ChatMessagesService, UserService, AuthService ],
+  providers: [ appRoutingProviders, ChatMessagesService, UserService, AuthService, RoomService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

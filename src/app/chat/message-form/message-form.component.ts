@@ -27,8 +27,10 @@ export class MessageFormComponent implements OnInit {
   }
 
   saveMessage() {
-    this.chatMessageService.createNewMessage(this.roomId, <ChatMessage> this.chatModel);
-    this.chatModel.body = '';
+    this.chatMessageService
+          .createNewMessage(this.roomId, this.chatModel)
+          .then(() => this.chatModel.body = '')
+          .catch(error => console.log('error', error));
   }
 
 }

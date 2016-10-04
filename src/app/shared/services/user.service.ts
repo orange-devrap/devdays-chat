@@ -9,6 +9,10 @@ export class UserService {
 
   currentUser$ = this.currentUser.asObservable();
 
+  getUser(): User {
+    return this.currentUser.getValue();
+  }
+
   load(user: User) {
     this.currentUser.next(user);
   }

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { UserService } from '../shared/services/user.service';
 
 @Component({
   selector: 'ddo-chat',
@@ -9,12 +8,8 @@ import { UserService } from '../shared/services/user.service';
 })
 export class ChatComponent {
   roomId: string;
-  author: string;
 
-  constructor(private _route: ActivatedRoute, public userService: UserService) {
-    userService.currentUser$.subscribe(user => {
-      this.author = user.pseudo;
-    });
+  constructor(private _route: ActivatedRoute) {
     this.roomId = this._route.snapshot.params['roomId'];
   }
 }

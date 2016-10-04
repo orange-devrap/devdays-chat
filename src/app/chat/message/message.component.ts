@@ -11,18 +11,14 @@ import { UserService } from '../../shared/services/user.service';
 export class MessageComponent implements OnInit {
 
   @Input() message: ChatMessage;
-  author: string;
 
   constructor(public userService: UserService) { }
 
   ngOnInit() {
-    this.userService.currentUser$.subscribe(user => {
-      this.author = user.pseudo;
-    });
   }
 
   isMyMessage(): boolean {
-    return this.message.author === this.author;
+    return this.message.author === this.userService.getUser().pseudo;
   }
 
 }

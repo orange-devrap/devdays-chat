@@ -19,7 +19,6 @@ export class MessagesComponent implements OnInit {
   ngOnInit() {
     this.messages = this.chatMessageService.getMessagesByRoomId(this.roomId);
     this.messages.subscribe(msg => {
-      // console.log('refresh messages', '(document.body.scrollHeight - window.scrollY)', (document.body.scrollHeight - window.scrollY));
       if (window.scrollY === 0 || (document.body.scrollHeight - window.scrollY) < 900) {
         setTimeout(() => {
           window.scrollTo(0, document.body.scrollHeight);

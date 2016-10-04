@@ -24,6 +24,7 @@ export class LoginComponent {
         userAuthenticated.uid = auth.uid;
         userAuthenticated.pseudo = this.user.pseudo;
         this.userService.load(userAuthenticated);
+
         this.authService.isLoggedIn = true;
 
         // Get the redirect URL from our auth service

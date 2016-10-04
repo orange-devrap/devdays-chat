@@ -16,12 +16,12 @@ export class RoomsComponent implements OnInit {
   constructor(private _af: AngularFire, public roomService: RoomService) { }
 
   ngOnInit() {
-    this.rooms = this._af.database.list('rooms');
     this.roomService.reset();
+    this.rooms = this._af.database.list('rooms');
   }
 
-  selectRoom(roomName: string) {
-    this.roomService.load(new Room(roomName));
+  selectRoom(room: Room) {
+    this.roomService.load(room);
   }
 
 }

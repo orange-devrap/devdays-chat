@@ -16,3 +16,10 @@ fc-chat-message-form {
   left: 0;
   right: 0;
 }
+.room-toolbar {
+  /*z-index: 50;
+  position: fixed;
+  top: 56!important;
+  left: 0;
+  right: 0;*/
+}

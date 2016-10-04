@@ -1,5 +1,5 @@
 import { RoomsComponent } from './room/rooms.component';
-import { ChatComponent } from './chat/chat.component';
+// import { ChatComponent } from './chat/chat.component';
 import { Routes, RouterModule } from '@angular/router/src';
 import { ModuleWithProviders } from '@angular/core';
 import { LoginComponent } from './login/login.component';
@@ -19,11 +19,6 @@ const appRoutes: Routes = [
   {
     path: 'rooms',
     component: RoomsComponent,
-    canActivate: [AuthGuardService]
-  },
-  {
-    path: 'rooms/:roomId/chat',
-    component: ChatComponent,
     canActivate: [AuthGuardService]
   }
 ];

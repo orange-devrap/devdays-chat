@@ -1,6 +1,6 @@
 <md-toolbar class="app-toolbar" color="primary">
 
-  <div class="app-toolbar-title">DevDays</div>
+  <div class="app-toolbar-title" [routerLink]="['/rooms']">DevDays</div>
 
   <div class="app-toolbar-filler"></div>
 
@@ -14,6 +14,6 @@
 
 <md-menu #menu="mdMenu" x-position="before" >
   <button md-menu-item >none</button>
-  <button md-menu-item (click)="goToRooms()">rooms </button>
+  <button md-menu-item [routerLink]="['/rooms']">rooms </button>
   <button md-menu-item (click)="logout()">logout</button>
 </md-menu>

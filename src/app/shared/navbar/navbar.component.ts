@@ -22,10 +22,6 @@ export class NavbarComponent implements OnInit {
     this.userService.currentUser$.subscribe(currentUser => this.user = currentUser);
   }
 
-  goToRooms() {
-    this.router.navigate(['/rooms']);
-  }
-
   logout() {
      this.authService.logout();
      this.router.navigate(['/login']);

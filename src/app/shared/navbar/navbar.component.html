@@ -1,19 +1,6 @@
 <md-toolbar class="app-toolbar" color="primary">
 
-  <!--<button md-icon-button [md-menu-trigger-for]="menu">
-    <md-icon>more_vert</md-icon>
-  </button>-->
-  
-  <!--<button md-icon-button (click)="goBack()" *ngIf="room?.name?.length > 0">
-    <md-icon>keyboard_arrow_left</md-icon>
-  </button>-->
-
   <div class="app-toolbar-title">DevDays</div>
-
-  <!--<span class="app-toolbar-filler"></span>-->
-
-
-  <!--<span class="app-toolbar-room" *ngIf="room?.name?.length > 0">{{room?.name}}</span>-->
 
   <div class="app-toolbar-filler"></div>
 
@@ -23,8 +10,6 @@
     <md-icon class="app-icon-user" *ngIf="user?.pseudo?.length > 0" >account_circle</md-icon>
   </button>
   
-  <!--<span class="app-toolbar-user">{{ user?.pseudo }}</span>-->
-
 </md-toolbar>
 
 <md-menu #menu="mdMenu" x-position="before" >

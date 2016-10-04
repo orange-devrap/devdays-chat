@@ -1,25 +1,33 @@
 <md-toolbar class="app-toolbar" color="primary">
 
-  <button md-icon-button [md-menu-trigger-for]="menu">
+  <!--<button md-icon-button [md-menu-trigger-for]="menu">
     <md-icon>more_vert</md-icon>
-  </button>
-
-  <span class="app-toolbar-title">DevDays 2016</span>
-
-  <span class="app-toolbar-filler"></span>
-
+  </button>-->
+  
   <button md-icon-button (click)="goBack()" *ngIf="room?.name?.length > 0">
     <md-icon>keyboard_arrow_left</md-icon>
   </button>
 
-  <span class="app-toolbar-room">{{room?.name}}</span>
-  
-  <md-icon class="app-icon-user" *ngIf="user?.pseudo?.length > 0" >account_circle</md-icon>
+  <div class="app-toolbar-title">DevDays</div>
+
+  <!--<span class="app-toolbar-filler"></span>-->
+
+
+  <!--<span class="app-toolbar-room" *ngIf="room?.name?.length > 0">{{room?.name}}</span>-->
+
+  <div class="app-toolbar-filler"></div>
+
   <span class="app-toolbar-user">{{ user?.pseudo }}</span>
+
+  <button md-icon-button [md-menu-trigger-for]="menu">
+    <md-icon class="app-icon-user" *ngIf="user?.pseudo?.length > 0" >account_circle</md-icon>
+  </button>
+  
+  <!--<span class="app-toolbar-user">{{ user?.pseudo }}</span>-->
 
 </md-toolbar>
 
-<md-menu #menu="mdMenu">
+<md-menu #menu="mdMenu" x-position="before" >
   <button md-menu-item >none</button>
   <button md-menu-item (click)="goToRooms()">rooms </button>
   <button md-menu-item (click)="logout()">logout</button>

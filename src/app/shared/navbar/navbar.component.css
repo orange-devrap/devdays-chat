@@ -10,6 +10,7 @@ a.md-primary[md-button] {
   position: fixed;
   z-index: 100;
   top:0;
+  background-color: black;
 }
 
 .app-icon-button {
@@ -30,13 +31,12 @@ a.md-primary[md-button] {
   color: white;
 }
 
-
 .app-toolbar-filler {
   flex: 1 1 auto;
 }
 
 .app-toolbar-title {
-  padding-left: 10px;
+  padding-left: 1px;
 }
 
 .app-toolbar-room {
@@ -45,5 +45,9 @@ a.md-primary[md-button] {
 }
 
 .app-icon-user {
-  padding-right: 5px;
+  padding-right: 1px;
+}
+
+.app-toolbar-user {
+  font-size: 0.8em;
 }

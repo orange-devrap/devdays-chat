@@ -1,0 +1,13 @@
+<div class="toolbar-room" color="primary">
+
+  <div style="float:left">
+    <button md-icon-button (click)="goBack()" *ngIf="room?.name?.length > 0">
+      <md-icon>keyboard_arrow_left</md-icon>
+    </button>
+  </div>
+
+  <div class="toolbar-room-title" >
+    <span *ngIf="room?.name?.length > 0">{{room?.name}}</span>
+  </div>
+
+</div>

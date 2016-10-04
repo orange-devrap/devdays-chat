@@ -1,0 +1,20 @@
+.toolbar-room {
+    color: white;
+    position: fixed;
+    z-index: 1;
+    top: 50;
+    right: 0;
+    left: 0;
+    background-color: #ff6600;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.toolbar-room-title {
+  padding-top: 8px;
+  padding-right: 40px;
+  text-align: center;
+}
+

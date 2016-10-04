@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { AngularFire, FirebaseListObservable, AuthProviders, AuthMethods } from 'angularfire2';
-import { AuthService } from './shared/services';
+import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 
 @Component({
   selector: 'ddo-root',
@@ -10,30 +8,15 @@ import { AuthService } from './shared/services';
 })
 export class AppComponent {
 
-  isDarkTheme: boolean = false;
-
-  rooms: FirebaseListObservable<any[]>;
-
-  constructor(af: AngularFire, public authService: AuthService, public router: Router) {
+  constructor(af: AngularFire) {
     af.auth.login({
       provider: AuthProviders.Anonymous,
       method: AuthMethods.Anonymous,
     })
-    .then(auth => {
-      // console.log('auth', auth);
-      // this.rooms = af.database.list('rooms');
+    .then(auth => { // console.log('auth', auth);
     })
     .catch(ex => console.error('ex', ex));
 
-   }
-
-   themeToggle() {
-     this.isDarkTheme = !this.isDarkTheme;
-   }
-
-   logout() {
-     this.authService.logout();
-     this.router.navigate(['/login']);
    }
 
 }

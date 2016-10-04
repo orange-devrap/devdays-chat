@@ -21,6 +21,7 @@ import { MessageFormComponent } from './chat/message-form/message-form.component
 
 // services
 import { ChatMessagesService, UserService, AuthService, RoomService } from './shared/services';
+import { RoomToolbarComponent } from './chat/room-toolbar/room-toolbar.component';
 
 // firebase config
 const firebaseConfig = {
@@ -34,7 +35,7 @@ const firebaseConfig = {
   declarations: [
     AppComponent,
     NavbarComponent, RoomsComponent, MessagesComponent, MessageComponent,
-    ChatComponent, MessageFormComponent, LoginComponent, MessageFormComponent
+    ChatComponent, MessageFormComponent, LoginComponent, MessageFormComponent, RoomToolbarComponent
   ],
   imports: [
     BrowserModule,

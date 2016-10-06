@@ -1,4 +1,6 @@
-<md-toolbar class="app-toolbar" color="primary">
+<md-toolbar class="app-toolbar md-medium-tall" color="primary">
+
+  <img src="./assets/images/logo_orange.png" width="30">
 
   <div class="app-toolbar-title" [routerLink]="['/rooms']">DevDays</div>
 
@@ -9,11 +11,11 @@
   <button md-icon-button [md-menu-trigger-for]="menu">
     <md-icon class="app-icon-user" *ngIf="user?.pseudo?.length > 0" >account_circle</md-icon>
   </button>
-  
+
 </md-toolbar>
 
-<md-menu #menu="mdMenu" x-position="before" >
-  <button md-menu-item >none</button>
+<md-menu #menu="mdMenu" x-position="before">
+  <button md-menu-item>none</button>
   <button md-menu-item [routerLink]="['/rooms']">rooms </button>
   <button md-menu-item (click)="logout()">logout</button>
 </md-menu>

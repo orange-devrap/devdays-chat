@@ -7,8 +7,8 @@ a.md-primary[md-button] {
 }*/
 
 .app-toolbar {
-  position: fixed;
   z-index: 100;
+  position: fixed;
   top:0;
   background-color: black;
 }
@@ -36,7 +36,7 @@ a.md-primary[md-button] {
 }
 
 .app-toolbar-title {
-  padding-left: 1px;
+  padding-left: 5px;
 }
 
 .app-toolbar-room {

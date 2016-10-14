@@ -10,10 +10,6 @@ import { AuthService } from './shared/services';
 })
 export class AppComponent {
 
-  isDarkTheme: boolean = false;
-
-  rooms: FirebaseListObservable<any[]>;
-
   constructor(af: AngularFire, public authService: AuthService, public router: Router) {
     af.auth.login({
       provider: AuthProviders.Anonymous,
@@ -21,14 +17,9 @@ export class AppComponent {
     })
     .then(auth => {
       // console.log('auth', auth);
-      // this.rooms = af.database.list('rooms');
     })
     .catch(ex => console.error('ex', ex));
 
-   }
-
-   themeToggle() {
-     this.isDarkTheme = !this.isDarkTheme;
    }
 
    logout() {

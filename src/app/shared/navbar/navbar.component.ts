@@ -15,8 +15,6 @@ export class NavbarComponent {
 
   user: User;
   room: Room;
-  @Output() sidenavToggle: EventEmitter<boolean> = new EventEmitter<boolean>();
-  @Output() themeToggle: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor(public userService: UserService, 
             public authService: AuthService, 
@@ -25,10 +23,6 @@ export class NavbarComponent {
             public router: Router) {
     userService.currentUser$.subscribe(currentUser => this.user = currentUser);
     roomService.currentRoom$.subscribe(currentRoom => this.room = currentRoom);
-  }
-
-  theme($event) {
-    this.themeToggle.emit(true);
   }
 
   goToRooms() {

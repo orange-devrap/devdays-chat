@@ -1,19 +1,5 @@
-<ddo-navbar (sidenavToggle)="sidenav.toggle()" (themeToggle)="themeToggle()"></ddo-navbar>
+<ddo-navbar></ddo-navbar>
 
-<div style="padding-top: 65px">
-
-  <!--<md-sidenav-layout [class.m2app-dark]="isDarkTheme">
-
-    <md-sidenav #sidenav mode="side" class="app-sidenav">
-      <a [routerLink]="['/rooms']" md-raised-button color="accent" (click)="sidenav.close()">rooms</a>
-      <br>
-      <button md-button (click)="logout();sidenav.close()">logout</button>
-    </md-sidenav>
-
-  </md-sidenav-layout>-->
-
-    <div class="main-container" >
-      <router-outlet></router-outlet>
-    </div>
-
+<div class="main-container">
+  <router-outlet></router-outlet>
 </div>

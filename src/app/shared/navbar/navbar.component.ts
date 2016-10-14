@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
@@ -16,9 +16,9 @@ export class NavbarComponent {
   user: User;
   room: Room;
 
-  constructor(public userService: UserService, 
-            public authService: AuthService, 
-            public roomService: RoomService, 
+  constructor(public userService: UserService,
+            public authService: AuthService,
+            public roomService: RoomService,
             private _location: Location,
             public router: Router) {
     userService.currentUser$.subscribe(currentUser => this.user = currentUser);

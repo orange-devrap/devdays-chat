@@ -1,8 +1,8 @@
-import { FirebaseListObservable } from 'angularfire2/database';
 import { AngularFire } from 'angularfire2';
 import { Component, OnInit } from '@angular/core';
 import { RoomService } from '../shared/services/room.service';
 import { Room } from '../shared/models';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'ddo-rooms',
@@ -11,7 +11,7 @@ import { Room } from '../shared/models';
 })
 export class RoomsComponent implements OnInit {
 
-  rooms: FirebaseListObservable<any>;
+  rooms: Observable<Room[]>;
 
   constructor(private _af: AngularFire, public roomService: RoomService) { }
 
@@ -20,8 +20,8 @@ export class RoomsComponent implements OnInit {
     this.roomService.reset();
   }
 
-  selectRoom(roomName: string) {
-    this.roomService.load(new Room(roomName));
+  selectRoom(roomSelected: Room) {
+    this.roomService.load(roomSelected);
   }
 
 }

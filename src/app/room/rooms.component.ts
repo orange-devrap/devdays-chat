@@ -21,6 +21,7 @@ export class RoomsComponent implements OnInit {
   }
 
   selectRoom(roomSelected: Room) {
+    console.log('select room', roomSelected);
     this.roomService.load(roomSelected);
   }
 

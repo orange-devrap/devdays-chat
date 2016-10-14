@@ -9,6 +9,10 @@ export class RoomService {
 
   currentRoom$ = this.currentRoom.asObservable();
 
+  getRoom(): Room {
+    return this.currentRoom.getValue();
+  }
+
   load(room: Room) {
     this.currentRoom.next(room);
   }

@@ -3,7 +3,22 @@
 ## STEP 02 : messages
 
 ### ChatMessageService
+
+- cd src/app/shared/services
+- ng g service chatMessage
+
 1. add method getMessagesByRoomId
+2. call af. database.list
+
+```typescript
+  getMessagesByRoomId(roomId: string): Observable<ChatMessage[]> {
+    return this._af.database.list(`rooms/${roomId}/messages`, {
+      query: {
+        limitToLast: 50
+      }
+    });
+  }
+``` 
 
 ### component : messages
 - cd src/app/chat

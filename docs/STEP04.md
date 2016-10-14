@@ -4,7 +4,17 @@
 
 ### ChatMessageService : create message
 
-
+```typescript
+  createNewMessage(roomId: string, newMessage: ChatMessage): Promise<void> {
+    newMessage.author = this.userService.getUser().pseudo;
+    newMessage.created = new Date().toUTCString();
+    return new Promise((resolve) => {
+      this._af.database.list(`rooms/${roomId}/messages`).push(newMessage).then(() => {
+        resolve();
+      });
+    });
+  }
+```
 
 ### component : message-form
 - cd src/app/chat

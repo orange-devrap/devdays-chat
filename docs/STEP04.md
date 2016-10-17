@@ -26,6 +26,7 @@
 class ChatMessageFormModel implements ChatMessage {
   author: string;
   body: string;
+  created?: string;  
 }
 
 @Component({

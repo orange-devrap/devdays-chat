@@ -1,14 +1,13 @@
 <div class="room-container">
   <md-card *ngFor="let room of rooms | async">
     <md-card-title>
-      {{ room.name }}
+      <div class="room-name">{{ room.name }}</div>
+      <div class="room-btn">
+        <button md-mini-fab color="primary" [routerLink]="['/rooms', room.$key, 'chat']" (click)="selectRoom(room)">
+            <md-icon class="md-24">comment</md-icon>
+        </button>
+      </div>        
     </md-card-title>
-    <md-card-content>
-      <p>{{ room.description }}</p>
-    </md-card-content>
-    <md-card-actions>
-        <a [routerLink]="['/rooms', room.$key, 'chat']" md-raised-button color="primary" (click)="selectRoom(room)">JOIN</a>
-      </md-card-actions>
   </md-card>
   <div *ngIf="(rooms | async)?.length < 1" style="padding-top:150px">
     <md-spinner class="app-spinner"></md-spinner>

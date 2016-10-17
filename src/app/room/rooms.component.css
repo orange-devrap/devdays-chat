@@ -2,8 +2,17 @@
   display: flex;
   flex-flow: column nowrap;
 }
+
 .room-container md-card {
   margin: 16px;
+}
+
+.room-container .room-name {
+  float: left;
+}
+
+.room-container .room-btn {
+  float: right;
 }
 
 .room-container md-card-actions {

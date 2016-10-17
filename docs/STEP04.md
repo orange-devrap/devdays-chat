@@ -57,6 +57,7 @@ export class MessageFormComponent implements OnInit {
 2. message-form.component.html
 
 ```html
+<!--
 <md-card>
   <md-card-content>
     <form (ngSubmit)="saveMessage()"  #messageForm="ngForm">
@@ -67,11 +68,46 @@ export class MessageFormComponent implements OnInit {
     </form>
   </md-card-content>
 </md-card>
+-->
+<md-card>
+  <md-card-content>
+    <form (ngSubmit)="saveMessage()"  #messageForm="ngForm">
+      <textarea [(ngModel)]="chatModel.body" name="body" required></textarea>
+      <button md-mini-fab color="primary" type="submit" [disabled]="!messageForm.form.valid">
+          <md-icon class="md-24">send</md-icon>
+      </button>
+    </form>
+  </md-card-content>
+</md-card>
 ```
 
 3. message-form.component.css
 
 ```css
+textarea {
+  width: 83%;
+  border: 1px #9e9e9e solid;
+  /*display: block;*/
+  resize: vertical;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 18px;
+}
+
+div {
+  width:100%;
+  text-align:right;
+}
+
+md-card {
+  padding: 15px;
+}
+button {
+  padding-left:3px;
+  top: -12px;
+  left: 10px;  
+}
+
+/* ======= */
 md-card {
     padding: 10px 15px;
 }

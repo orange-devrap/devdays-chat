@@ -1,18 +1,20 @@
 md-card {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  padding: 15px;
 }
 
 md-card.my-message {
-  background-color: #4BB4E6;
+  background-color: #e3e3e3; /* #4BB4E6; */
 }
 
 md-card.my-message .message-author {
-  color:white;
+  color:#ff6600; /* white;*/
 }
 
 md-card-title {
   font-size:20px;
-}
+  margin-bottom: 8px;
+}l
 
 md-card-content {
   font-size:15px;

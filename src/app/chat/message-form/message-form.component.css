@@ -1,7 +1,7 @@
 textarea {
-  width: 100%;
+  width: 83%;
   border: 1px #9e9e9e solid;
-  display: block;
+  /*display: block;*/
   resize: vertical;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   font-size: 18px;
@@ -14,4 +14,9 @@ div {
 
 md-card {
   padding: 15px;
+}
+button {
+  padding-left:3px;
+  top: -12px;
+  left: 10px;  
 }

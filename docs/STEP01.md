@@ -1,7 +1,6 @@
 # DevdaysChat
 
 ## STEP 01
-
 Objectif : router une room sur un composant chat contenant une zone pour afficher la liste des messages et une zone pour saisir un message 
 
 1. créer le composant `chat.component` qui contient les 2 zones d'affichage:
@@ -77,4 +76,4 @@ const appRoutes: Routes = [
 
 
 # RESULT
-![GitHub Logo](./step01.png)
+![step01](./step01.png)

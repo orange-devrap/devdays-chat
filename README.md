@@ -1,9 +1,17 @@
-# DevdaysChat
-
+# Devdays Chat
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.15.
 
+## Practice
+This practice is divided into 5 steps. You can read the detail of each step into the repository `docs` and get the source code from the branches `s_01, s_02, s_03, s_04, s_05`.
+
+## Final app
+The final App (master branch) is deployed into [Heroku](https://devdays-chat.herokuapp.com/).
+
+
+# ng-CLI 
+
 ## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` or `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
@@ -30,5 +38,3 @@ Run `ng github-pages:deploy` to deploy to Github Pages.
 
 To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-# devdays-chat
-sample chat app ng2

@@ -11,11 +11,6 @@
     - init template : s1-chat
     - init css : s1-container
 
-<<<<<<< HEAD
-### router
-- add route dans app.routes : s1-route
-- add routerLink dans rooms.component.html : [routerLink]="['/rooms', room.$key, 'chat']"
-=======
 
 ### router
 1. app.routes.ts
@@ -80,4 +75,3 @@ const appRoutes: Routes = [
 
 # RESULT
 ![GitHub Logo](./step01.png)
->>>>>>> e99709b... strep 01 docs

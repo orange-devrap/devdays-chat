@@ -19,6 +19,7 @@ import { RoomsComponent } from './room/rooms.component';
 import { UserService, AuthService, RoomService, ChatMessagesService } from './shared/services';
 import { ChatComponent } from './chat/chat.component';
 import { MessagesComponent } from './chat/messages/messages.component';
+import { MessageFormComponent } from './chat/message-form/message-form.component';
 
 // firebase config
 const firebaseConfig = {
@@ -30,7 +31,7 @@ const firebaseConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent, NavbarComponent, LoginComponent, RoomsComponent, ChatComponent, MessagesComponent
+    AppComponent, NavbarComponent, LoginComponent, RoomsComponent, ChatComponent, MessagesComponent, MessageFormComponent
   ],
   imports: [
     BrowserModule,

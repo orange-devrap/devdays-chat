@@ -1,0 +1,10 @@
+<md-card>
+  <md-card-content>
+    <form (ngSubmit)="saveMessage()" >
+      <textarea [(ngModel)]="message.body" name="body" ></textarea>
+      <button md-mini-fab color="primary" type="submit">
+          <md-icon class="md-24">send</md-icon>
+      </button>
+    </form>
+  </md-card-content>
+</md-card>

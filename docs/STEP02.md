@@ -2,7 +2,7 @@
 
 ## STEP 02
 
-Objectifs :
+Objectif : afficher la liste des messages d'une room
 
 1. créer le service pour récupérer les messages depuis Firebase
 2. créer le composant `messages.component` pour afficher cette liste de message

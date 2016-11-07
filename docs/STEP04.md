@@ -4,7 +4,6 @@
 
 Objectif : vadidation & feature 
 
-
 1. validation du formulaire  
 2. identifier l'auteur du message
 

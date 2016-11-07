@@ -2,14 +2,17 @@
 
 ## STEP 01
 
+Objectif : router une room sur un composant chat contenant une zone pour afficher la liste des messages et une zone pour saisir un message 
+
+1. créer le composant `chat.component` qui contient les 2 zones d'affichage:
+- liste des messages
+- formulaire du message à envoyer
+
+2. router la sélection d'une room vers ce composant `chat.component`
+
 ### créer chat component
 - cd src/app
 - ng g component chat
-- class
-    - init constructor : s1-chat
-- template
-    - init template : s1-chat
-    - init css : s1-container
 
 
 ### router
@@ -74,4 +77,4 @@ const appRoutes: Routes = [
 
 
 # RESULT
-![GitHub Logo](./step01.png)
+![step01](./step01.png)

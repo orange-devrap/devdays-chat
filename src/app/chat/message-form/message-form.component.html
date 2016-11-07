@@ -1,10 +1,20 @@
 <md-card>
+
   <md-card-content>
-    <form (ngSubmit)="saveMessage()" >
-      <textarea [(ngModel)]="message.body" name="body" ></textarea>
-      <button md-mini-fab color="primary" type="submit">
+    
+    <!-- nommer le formulaire : msgForm --> 
+    <form (ngSubmit)="saveMessage()" #msgForm="ngForm" >
+      
+      <!-- champ de saisie obligatoire : required --> 
+      <textarea [(ngModel)]="message.body" name="body" required ></textarea>
+      
+      <!-- bouton 'send' actif si formulaire 'valide' -->
+      <button md-mini-fab color="primary" type="submit" [disabled]="!msgForm.form.valid">
           <md-icon class="md-24">send</md-icon>
       </button>
+
     </form>
+
   </md-card-content>
+
 </md-card>

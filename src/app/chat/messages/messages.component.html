@@ -1,11 +1,7 @@
 <section class="message-list-container">
-  <!-- 
-   - boucle sur la liste des messages
-   - utilisation de ' | async ' car messages est un Observable
-   - ce pipe permet d'executer un 'subscribe'
-   -->
-  <div *ngFor="let message of messages | async">
-    <md-card>
+  <div *ngFor="let message of messages | async" >
+    <!-- ajout class css si le message appartient au user connecté -->
+    <md-card  [ngClass]="{ 'my-message' : isMyMessage(message) }">
       <md-card-title>
         <div>
           <span class="message-author"><small>{{ message.author }}</small></span>

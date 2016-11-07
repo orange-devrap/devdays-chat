@@ -1,0 +1,18 @@
+<section class="message-list-container">
+  <!-- 
+   - boucle sur la liste des messages
+   - utilisation de ' | async ' car messages est un Observable
+   - ce pipe permet d'executer un 'subscribe'
+   -->
+  <div *ngFor="let message of messages | async">
+    <md-card>
+      <md-card-title>
+        <div>
+          <span class="message-author"><small>{{ message.author }}</small></span>
+          <span class="message-date"><small>{{ message.created | date:'dd/MM/yy HH:mm' }}</small></span>
+        </div>
+      </md-card-title>
+      <md-card-content>{{ message.body}}</md-card-content>
+    </md-card>
+  </div>
+</section>

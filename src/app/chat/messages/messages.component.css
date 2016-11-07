@@ -1,0 +1,36 @@
+.message-list-container {
+  margin: 50px 16px 115px 16px;
+}
+
+md-spinner {
+  margin:auto;
+}
+
+md-card {
+  margin-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+md-card.my-message .message-author, 
+md-card.my-message .message-date {
+  color: #ff6600;
+}
+
+md-card-title {
+  font-size:20px;
+  margin-bottom: 8px;
+}
+
+md-card-content {
+  font-size:15px;
+}
+
+.message-date {
+  float:right;
+  font-size: medium;
+}
+
+.message-author, .message-date {
+  color: #4BB4E6;
+}

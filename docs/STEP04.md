@@ -1,44 +1,68 @@
 # DevdaysChat
 
-## STEP 04 : message form
+## STEP 04
 
-### ChatMessageService : create message
+Objectif : vadidation & feature 
 
 
+1. validation du formulaire  
+2. identifier l'auteur du message
 
-### component : message-form
-- cd src/app/chat
-- ng g component message-form
+### message-form
 
-1. message-form.component.ts :
+1. `message-form.component.html`
+
+```html
+<md-card>
+
+  <md-card-content>
+    
+    <!-- nommer le formulaire : msgForm --> 
+    <form (ngSubmit)="saveMessage()" #msgForm="ngForm" >
+      
+      <!-- champ de saisie obligatoire : required --> 
+      <textarea [(ngModel)]="message.body" name="body" required ></textarea>
+      
+      <!-- bouton 'send' actif si formulaire 'valide' -->
+      <button md-mini-fab color="primary" type="submit" [disabled]="!msgForm.form.valid">
+          <md-icon class="md-24">send</md-icon>
+      </button>
+
+    </form>
+
+  </md-card-content>
+
+</md-card>
+```
+
+### messages
+
+1. `messages.component.ts`
 
 ```typescript
-class ChatMessageFormModel implements ChatMessage {
-  author: string;
-  body: string;
-}
+import { ChatMessage } from '../../shared/models/chat-message';
+import { Component, OnInit, Input } from '@angular/core';
+import { ChatMessagesService, UserService } from '../../shared/services';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
-  selector: 'ddo-message-form',
-  templateUrl: 'message-form.component.html',
-  styleUrls: ['message-form.component.css']
+  selector: 'ddo-messages',
+  templateUrl: './messages.component.html',
+  styleUrls: ['./messages.component.css']
 })
-export class MessageFormComponent implements OnInit {
+export class MessagesComponent implements OnInit {
+
   @Input() roomId: string;
-  @Input() author: string;
+  messages: Observable<ChatMessage[]>;
 
-  private chatModel: ChatMessage = new ChatMessageFormModel();
-
-  constructor(public chatMessageService: ChatMessagesService, public userService: UserService) {
-  }
+  constructor(private chatMessagesService: ChatMessagesService, private userService: UserService) { }
 
   ngOnInit() {
-    this.chatModel.author = this.author;
+    this.messages = this.chatMessagesService.getMessagesByRoomId(this.roomId);
   }
 
-  saveMessage() {
-    this.chatMessageService.createNewMessage(this.roomId, <ChatMessage> this.chatModel);
-    this.chatModel.body = '';
+  isMyMessage(message: ChatMessage): boolean {
+    return message.author === this.userService.getUser().pseudo;
   }
 }
 ```
@@ -46,55 +70,21 @@ export class MessageFormComponent implements OnInit {
 2. message-form.component.html
 
 ```html
-<md-card>
-  <md-card-content>
-    <form (ngSubmit)="saveMessage()"  #messageForm="ngForm">
-      <p><textarea [(ngModel)]="chatModel.body" name="body" required></textarea></p>
-      <div>
-        <button md-raised-button color="primary" type="submit" [disabled]="!messageForm.form.valid">Send</button>
-      </div>
-    </form>
-  </md-card-content>
-</md-card>
-```
-
-3. message-form.component.css
-
-```css
-md-card {
-    padding: 10px 15px;
-}
-
-textarea {
-  width: 100%;
-  border: 1px #9e9e9e solid;
-  display: block;
-  resize: vertical;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  font-size: 18px;
-  margin-bottom: 5px;
-}
-
-div {
-  width:100%;
-  text-align:right;
-}
-```
-
-4. insert into chat.component.html
-```html
-
-<section class="room-toolbar">
-  <ddo-room-toolbar></ddo-room-toolbar>
-</section>
-
-<section class="container">
-
-  <ddo-messages [roomId]="roomId"></ddo-messages>
-
-  <div class="fixed">
-    <ddo-message-form [author]="author" [roomId]="roomId"></ddo-message-form>
+<section class="message-list-container">
+  <div *ngFor="let message of messages | async" >
+    <!-- ajout class css si le message appartient au user connecté -->
+    <md-card  [ngClass]="{ 'my-message' : isMyMessage(message) }">
+      <md-card-title>
+        <div>
+          <span class="message-author"><small>{{ message.author }}</small></span>
+          <span class="message-date"><small>{{ message.created | date:'dd/MM/yy HH:mm' }}</small></span>
+        </div>
+      </md-card-title>
+      <md-card-content>{{ message.body}}</md-card-content>
+    </md-card>
   </div>
-
 </section>
 ```
+
+# RESULT
+![step04](./step04.png)

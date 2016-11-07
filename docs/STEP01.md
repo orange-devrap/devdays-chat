@@ -6,33 +6,45 @@
 - cd src/app
 - ng g component chat
 
+
 ### router
-- add route dans app.routes : s1-route
-- add routerLink dans rooms.component.html : [routerLink]="['/rooms', room.$key, 'chat']"
-
-### chat component
-
-1. chat.component.ts
+1. app.routes.ts
+- add route dans app.routes
 
 ```typescript
-export class ChatComponent {
-  roomId: string;
-
-  constructor(private _route: ActivatedRoute) {
-    this.roomId = this._route.snapshot.params['roomId'];
+import { ChatComponent } from './chat/chat.component';
+const appRoutes: Routes = [
+  ...,
+  {
+    path: 'rooms/:roomId/chat',
+    component: ChatComponent
   }
-}
+];
 ```
 
-2. chat.component.html
+2. rooms.component.html
+- add routerLink dans rooms.component.html : [routerLink]="['/rooms', room.$key, 'chat']"
+
+```html
+  <button md-mini-fab color="primary" [routerLink]="['/rooms', room.$key, 'chat']" (click)="selectRoom(room)">
+    <md-icon class="md-24">comment</md-icon>
+  </button>
+```
+
+
+### chat component 
+
+1. chat.component.html
 
 ```html
 <section class="container">
 
-  <ddo-messages [roomId]="roomId"></ddo-messages>
+  <div>TODO liste messages</div>
 
   <div class="fixed">
-    <ddo-message-form [roomId]="roomId"></ddo-message-form>
+
+    <div>TODO message form</div>
+
   </div>
 
 </section>
@@ -55,3 +67,6 @@ export class ChatComponent {
 }
 ```
 
+
+# RESULT
+![GitHub Logo](./step01.png)

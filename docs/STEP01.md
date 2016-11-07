@@ -1,6 +1,12 @@
 # DevdaysChat
 
 ## STEP 01
+Objectifs :
+1. créer le composant `chat.component` qui contient les 2 zones d'affichage:
+- liste des messages
+- formulaire du message à envoyer
+
+2. router la sélection d'une room vers ce composant `chat.component`
 
 ### créer chat component
 - cd src/app
@@ -69,4 +75,4 @@ const appRoutes: Routes = [
 
 
 # RESULT
-![GitHub Logo](./step01.png)
+![step01](./step01.png)

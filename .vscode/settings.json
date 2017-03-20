@@ -9,6 +9,6 @@
     "html.suggest.angular1": false,
 
     // Configures if the built-in HTML language support suggests Ionic tags, properties and values.
-    "html.suggest.ionic": false
-
+    "html.suggest.ionic": false,
+    "vsicons.presets.angular": true
 }

@@ -1,14 +1,3 @@
 <section class="message-list-container">
-  <div *ngFor="let message of messages | async" >
-    <!-- ajout class css si le message appartient au user connecté -->
-    <md-card  [ngClass]="{ 'my-message' : isMyMessage(message) }">
-      <md-card-title>
-        <div>
-          <span class="message-author"><small>{{ message.author }}</small></span>
-          <span class="message-date"><small>{{ message.created | date:'dd/MM/yy HH:mm' }}</small></span>
-        </div>
-      </md-card-title>
-      <md-card-content>{{ message.body}}</md-card-content>
-    </md-card>
-  </div>
+  <h3> TODO list messages </h3>
 </section>

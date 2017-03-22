@@ -3,17 +3,7 @@
   <md-card-content>
     
     <!-- nommer le formulaire : msgForm --> 
-    <form (ngSubmit)="saveMessage()" #msgForm="ngForm" >
-      
-      <!-- champ de saisie obligatoire : required --> 
-      <textarea [(ngModel)]="message.body" name="body" required ></textarea>
-      
-      <!-- bouton 'send' actif si formulaire 'valide' -->
-      <button md-mini-fab color="primary" type="submit" [disabled]="!msgForm.form.valid">
-          <md-icon class="md-24">send</md-icon>
-      </button>
-
-    </form>
+    <h3>TODO form</h3>
 
   </md-card-content>
 

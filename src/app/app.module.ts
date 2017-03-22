@@ -16,10 +16,9 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { RoomsComponent } from './room/rooms.component';
 
 // services
-import { UserService, AuthService, RoomService, ChatMessagesService } from './shared/services';
-import { ChatComponent } from './chat/chat.component';
-import { MessagesComponent } from './chat/messages/messages.component';
-import { MessageFormComponent } from './chat/message-form/message-form.component';
+import { UserService, AuthService, RoomService } from './shared/services';
+// import { MessagesComponent } from './chat/messages/messages.component';
+// import { MessageFormComponent } from './chat/message-form/message-form.component';
 
 // firebase config
 const firebaseConfig = {
@@ -31,7 +30,7 @@ const firebaseConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent, NavbarComponent, LoginComponent, RoomsComponent, ChatComponent, MessagesComponent, MessageFormComponent
+    AppComponent, NavbarComponent, LoginComponent, RoomsComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +41,7 @@ const firebaseConfig = {
     MaterialModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig)
   ],
-  providers: [ appRoutingProviders, UserService, AuthService, RoomService, ChatMessagesService ],
+  providers: [ appRoutingProviders, UserService, AuthService, RoomService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

@@ -34,11 +34,9 @@ export class ChatMessagesService {
   }
 
   createMessage(roomId: string, newMessage: ChatMessage): Promise<void> {
-    return new Promise((resolve) => {
-      this._af.database.list(`rooms/${roomId}/messages`)
-                       .push(newMessage)
-                       .then(() => resolve());
-    });
+    return Promise.resolve(
+      this._af.database.list(`rooms/${roomId}/messages`).push(newMessage)
+    );
   }
 
 }
